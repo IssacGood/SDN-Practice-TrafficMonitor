@@ -67,3 +67,8 @@ ping -c1 10.0.0.2
 ### 9.比較前後差別(in c0-xterm)
 #### 如圖
 ![](img/compare.jpg)
+
+
+
+
+參考資料來源(https://osrg.github.io/ryu-book/zh_tw/Ryubook.pdf)
