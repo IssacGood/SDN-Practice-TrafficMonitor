@@ -3,8 +3,8 @@
 
 ### 1.撰寫監控程式碼(simple_monitor.py)
 ### 如圖
-![](img/Code1.JPG)
-![](img/Code2.JPG)
+![](img/Code1.jpg)
+![](img/Code2.jpg)
 
 ### 1.建置Mininet
 ### 交換器1台(single)、host3台的拓璞(3)、使用Open vSwitch(ovsk)、指定外部的 OpenFlow Controller(remote)、啟動 xterm(-x)
@@ -12,7 +12,7 @@
 sudo mn --topo single,3 --mac --switch ovsk --controller remote -x
 ```
 ### 如圖
-![](img/sudomn.JPG)
+![](img/sudomn.jpg)
 
 ### 2.查看Switch(s1)狀態
 ### 查看界面卡連接狀態
@@ -20,20 +20,20 @@ sudo mn --topo single,3 --mac --switch ovsk --controller remote -x
 ovs-vsctl show
 ```
 ### 如圖
-![](img/ovs-vsctl show.JPG)
+![](img/ovs-vsctl show.jpg)
 ### 查看介面卡與port連接狀態
 ```console
 ovs-vsctl show
 ```
 ### 如圖
-![](img/ovs-dpctl.JPG)
+![](img/ovs-dpctl.jpg)
 
 ### 3.設定OpenFlow的版本為1.3
 ```console
 ovs-vsctl set Bridge s1 protocols=OpenFlow13
 ```
 ### 如圖
-![](img/setBridge.JPG)
+![](img/setBridge.jpg)
 
 ### 4.檢查空白的Flow Table
 ### ovs-ofctl用來指定OpenFlow版本。預設值是OpenFlow10
@@ -41,7 +41,7 @@ ovs-vsctl set Bridge s1 protocols=OpenFlow13
 ovs-ofctl -O OpenFlow13 dump-flows s1
 ```
 ### 如圖
-![](img/dump-flow s1.JPG)
+![](img/dump-flow s1.jpg)
 
 ### 5.執行監控程式
 ### --verbose列出詳細執行訊息、./當前目錄下的檔案
@@ -49,7 +49,7 @@ ovs-ofctl -O OpenFlow13 dump-flows s1
 ryu-manager --verbose ./simple_monitor.py
 ```
 ### 如圖
-![](img/ryu verbose simple_monitor.JPG)
+![](img/ryu verbose simple_monitor.jpg)
 
 ### 6.h1 ping h2(10.0.0.2)
 ### -c1代表ping一個packet
@@ -57,12 +57,12 @@ ryu-manager --verbose ./simple_monitor.py
 ping -c1 10.0.0.2
 ```
 ### 如圖
-![](img/h1 ping h2.JPG)
+![](img/h1 ping h2.jpg)
 
 ### 6.查看controller變化
 ### 如圖
-![](img/c1 when h1 ping h2.JPG)
+![](img/c1 when h1 ping h2.jpg)
 
 ### 7.比較前後差別
 ### 如圖
-![](img/compare.JPG)
+![](img/compare.jpg)
